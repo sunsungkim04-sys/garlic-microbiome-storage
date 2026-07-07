@@ -8,7 +8,7 @@ rRNA V4 and fungal ITS2 amplicon sequencing, qPCR, culture (CFU), and cryo-SEM.
 
 ## Data availability
 - **Raw reads:** NCBI SRA, BioProject `PRJNA1490345` (20 samples × 16S/ITS = 40 libraries).
-- **This archive (Zenodo `10.5281/zenodo._______`):** processed feature tables, taxonomy, qPCR data, and analysis code.
+- **This archive (Zenodo [`10.5281/zenodo.21230815`](https://doi.org/10.5281/zenodo.21230815)):** processed feature tables, taxonomy, qPCR data, and analysis code.
 
 ## Repository layout
 ```
