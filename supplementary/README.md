@@ -1,0 +1,19 @@
+# Consolidated supplementary tables (LWT submission)
+
+Generated 2026-07-06. Merges the per-marker (16S / ITS) source CSVs into single TSVs
+with a leading `marker` column. Dropped **NEW-batch** and **freq10** sensitivity
+variants are excluded (single-lot reframe). Source CSVs remain in `../` for record.
+
+| Consolidated TSV | Supplementary | Merges | Rows |
+|---|---|---|---|
+| `TableS2_per_sample_summary.tsv` | Table S2 | `per_sample_summary_freq5.csv` + `_ITS.csv` | 32 (16S 12 + ITS 20) |
+| `TableS3a_DA_2M_genera.tsv` | Table S3 (part a) | `da_2M_genera_wilcoxon.csv` + `_ITS.csv` | 200 (16S 192 + ITS 8) |
+| `TableS3b_indicator_2M_ASVs.tsv` | Table S3 (part b) | `indicator_2M_evenmonth.csv` + `_ITS.csv` | 18 (16S 8 + ITS 10) |
+| `TableS8_minfreq_sensitivity.tsv` | Table S8 | `minfreq_sensitivity.csv` + `_ITS.csv` | 6 (16S 3 + ITS 3) |
+
+**Note on Table S3:** the per-genus differential-abundance results (S3a) and the strict
+presence/absence indicator-ASV set (S3b) have different schemas, so they are kept as two
+TSVs under the single Table S3 heading rather than force-merged. Per-genus DA is descriptive
+only (no genus survives exact-permutation FDR); the community claim rests on S3b + IndVal.
+
+Regeneration script: `scratchpad/consolidate_supp.py`.

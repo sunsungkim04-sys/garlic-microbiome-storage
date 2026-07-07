@@ -1,0 +1,19 @@
+marker	asv_id	genus	taxonomy	n_samples_2M	n_samples_other	max_rel_abund_2M_pct	category
+16S	9ba7818d3e9f292605a521d0183e0e43	Bacillus	d__Bacteria; p__Firmicutes; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus	3	0.0	8.29	strict
+16S	c4d22c607e3fdf72cd32b41cf96d721b	Bacillus	d__Bacteria; p__Firmicutes; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Bacillus	3	0.0	3.78	strict
+16S	3ae8618272d43b6153dd16a01dc29dc8	Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium	d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Rhizobiaceae; g__Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium	2	0.0	2.38	strict
+16S	5bccd2fada6933271d11a0806dd86c1c	Pseudonocardia	d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Pseudonocardiales; f__Pseudonocardiaceae; g__Pseudonocardia	2	0.0	2.56	strict
+16S	91e9745f6f33cb9275234301f0e174c0	Acinetobacter	d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter	2	0.0	2.51	strict
+16S	67d88a2022044459ef739a996bab7c60	Pseudogracilibacillus	d__Bacteria; p__Firmicutes; c__Bacilli; o__Bacillales; f__Bacillaceae; g__Pseudogracilibacillus	2	0.0	1.32	strict
+16S	4cc339fed1c57a4d941e164471bcbb53	Sphingobacterium	d__Bacteria; p__Bacteroidota; c__Bacteroidia; o__Sphingobacteriales; f__Sphingobacteriaceae; g__Sphingobacterium	2	0.0	0.48	strict
+16S	884507f744400a986b126f4b3e7e806c	Hathewaya	d__Bacteria; p__Firmicutes; c__Clostridia; o__Clostridiales; f__Clostridiaceae; g__Hathewaya; s__Clostridium_sp.	2	0.0	0.46	strict
+ITS	04d07f5327076f0a3e067fd12641923f	Aspergillus	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales;f__Aspergillaceae;g__Aspergillus	3		0.716	
+ITS	c2bb6c0bebb9ee6de257ecd68e48fdba	Penicillium	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales;f__Aspergillaceae;g__Penicillium	3		0.571	
+ITS	626df6199350c0670bbc9368597b32aa	Penicillium	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales;f__Aspergillaceae;g__Penicillium	2		0.223	
+ITS	3bcaedd140376998dc7aedbfa9e45ebd	Aspergillus	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales;f__Aspergillaceae;g__Aspergillus	3		0.11	
+ITS	3acbccd794bf9cd4910755bd967e2991	Alternaria	k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Pleosporales;f__Pleosporaceae;g__Alternaria	2		0.071	
+ITS	a334b4ff3869cd22e87fe2b9acb8813b	Cystobasidium	k__Fungi;p__Basidiomycota;c__Cystobasidiomycetes;o__Cystobasidiales;f__Cystobasidiaceae;g__Cystobasidium	3		0.058	
+ITS	a837c15419db7776b80696df10c102ae	Penicillium	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Eurotiales;f__Aspergillaceae;g__Penicillium	2		0.048	
+ITS	f84d3682b9e62eea6a51c12d192d2313	f__Didymosphaeriaceae	k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Pleosporales;f__Didymosphaeriaceae	2		0.045	
+ITS	303b4a159c7e5ce1f0058f67215c0571	Sterigmatomyces	k__Fungi;p__Basidiomycota;c__Agaricostilbomycetes;o__Agaricostilbales;f__Agaricostilbaceae;g__Sterigmatomyces	2		0.026	
+ITS	b6d707edbdc317da8ca5610e1301abab	f__Ceratobasidiaceae	k__Fungi;p__Basidiomycota;c__Agaricomycetes;o__Cantharellales;f__Ceratobasidiaceae	2		0.016	
