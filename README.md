@@ -25,6 +25,7 @@ filtering; ITS DADA2 235 → 95 after min-frequency = 5 and `k__Fungi` filtering
 ## Repository layout
 ```
 data/            16S/ITS DADA2 feature tables, min-frequency=5 filtered tables, taxonomy, qPCR/CFU table
+                 and the rooted 16S phylogeny (Newick)
 supplementary/   consolidated Table S2/S3a/S3b/S6 TSVs (see supplementary/README.md)
 scripts/         analysis scripts (compositional sensitivity, stage Mantel, IndVal, depth sweep,
                  min-frequency sensitivity, ...)
@@ -42,6 +43,11 @@ QIIME2 v2024.10 (16S SILVA 138.1 V4 99%, ITS UNITE v9 dynamic), then Python 3.11
 (`supplementary/TableS8_minfreq_sensitivity.tsv`) from this archive alone; at min-frequency = 5
 the 16S Bray-Curtis PERMANOVA reproduces the manuscript's F = 4.54.
 
+`python scripts/dispersion_audit.py` reproduces every PERMANOVA and PERMDISP statistic reported in
+the manuscript, including unweighted UniFrac from `data/16S_rooted_tree.nwk` (16S Bray-Curtis
+F = 4.54, PERMDISP F = 12.40, p = 0.022; unweighted UniFrac F = 9.57; ITS Jaccard F = 4.44,
+PERMDISP p = 0.76). No external phylogenetics package is required.
+
 `python figures/regen_fig3_16S.py` and `python figures/regen_fig4_quantification.py`
 regenerate manuscript Figures 3 and 4 into `figures/output/`. Both compute every statistic
 printed on the figure from the data plotted — nothing is hardcoded. Figure 3 reports
@@ -50,6 +56,12 @@ Kruskal-Wallis H = 7.20, p = 0.027. `python scripts/verify_fig4_stats.py` re-der
 Figure 4 rank statistics and compact-letter display independently.
 
 ## Versions
+- **v2.2** — unweighted UniFrac corrected to the 587-ASV table (F = 8.45 -> 9.57, R2 = 0.78,
+  adjusted R2 = 0.70); `figures/regen_figS9_minfreq.py` added.
+- **v2.3** — `data/16S_rooted_tree.nwk` (494 tips) and `scripts/dispersion_audit.py` added, so every
+  PERMANOVA/PERMDISP number in the manuscript, unweighted UniFrac included, is reproducible from
+  this archive with no external phylogenetics dependency. The phylogeny covers 414 of the 587
+  analysed 16S ASVs; Bray-Curtis and Jaccard use all 587.
 - **v2.1** — min-frequency filtering is now applied to the 12 analysed samples, so every table in
   this archive is reproducible from the archive itself (16S min-freq=5: 587 ASVs; Table S6 updated).
   `data/quantification_summary.csv` restricted to the analysed timepoints; `figures/regen_figures.py`
