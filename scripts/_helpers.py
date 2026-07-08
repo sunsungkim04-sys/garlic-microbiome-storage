@@ -264,15 +264,6 @@ META_EVEN_OLD = {
     "old_G7_R1": 6, "old_G7_R2": 6, "old_G7_R3": 6,
 }
 
-META_ALL_OLD = {
-    "old_G1_R1": 0, "old_G1_R2": 0, "old_G1_R3": 0,
-    "old_G2_R1": 1, "old_G2_R2": 1, "old_G2_R3": 1,
-    "old_G3_R1": 2, "old_G3_R2": 2, "old_G3_R3": 2,
-    "old_G4_R1": 3, "old_G4_R2": 3,
-    "old_G5_R1": 4, "old_G5_R2": 4, "old_G5_R3": 4,
-    "old_G6_R1": 5, "old_G6_R2": 5, "old_G6_R3": 5,
-    "old_G7_R1": 6, "old_G7_R2": 6, "old_G7_R3": 6,
-}
 
 META_NEW = {
     "new_G1_R1": 0, "new_G1_R2": 0, "new_G1_R3": 0, "new_G1_R4": 0, "new_G1_R5": 0,

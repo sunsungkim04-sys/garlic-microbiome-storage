@@ -17,16 +17,17 @@ n = 3 per timepoint (12 samples, 24 libraries)**. Sample IDs `G1`, `G3`, `G5`, `
 `0`, `2`, `4`, `6`.
 
 `data/quantification_summary.csv` reports culture (CFU) and qPCR, which were prepared from
-separate homogenates and are given for every month sampled.
+separate homogenates. qPCR covers 0/2/4/6 M; CFU covers 0/2/4 M (month 6 was not assayed).
 
 ASV counts in this archive: 16S DADA2 982 → 587 after min-frequency = 5 and Bacteria/Archaea
 filtering; ITS DADA2 235 → 95 after min-frequency = 5 and `k__Fungi` filtering.
 
 ## Repository layout
 ```
-data/            processed 16S/ITS feature tables (DADA2), taxonomy, qPCR/CFU table
+data/            16S/ITS DADA2 feature tables, min-frequency=5 filtered tables, taxonomy, qPCR/CFU table
 supplementary/   consolidated Table S2/S3a/S3b/S6 TSVs (see supplementary/README.md)
-scripts/         analysis scripts (compositional sensitivity, stage Mantel, IndVal, depth sweep, ...)
+scripts/         analysis scripts (compositional sensitivity, stage Mantel, IndVal, depth sweep,
+                 min-frequency sensitivity, ...)
 figures/         figure-regeneration scripts
 ```
 
@@ -37,7 +38,16 @@ QIIME2 v2024.10 (16S SILVA 138.1 V4 99%, ITS UNITE v9 dynamic), then Python 3.11
 `python scripts/15_indval_heatmap.py` regenerates manuscript Figure S10 from this archive alone
 (e.g. 16S *Bacillus* 2M = 16.70 %, ITS *Penicillium* = 50.22 / 94.58 / 90.55 / 99.93 %).
 
+`python scripts/regen_minfreq_sensitivity.py` regenerates manuscript Table S6
+(`supplementary/TableS8_minfreq_sensitivity.tsv`) from this archive alone; at min-frequency = 5
+the 16S Bray-Curtis PERMANOVA reproduces the manuscript's F = 4.54.
+
 ## Versions
+- **v2.1** — min-frequency filtering is now applied to the 12 analysed samples, so every table in
+  this archive is reproducible from the archive itself (16S min-freq=5: 587 ASVs; Table S6 updated).
+  `data/quantification_summary.csv` restricted to the analysed timepoints; `figures/regen_figures.py`
+  panel 4A corrected to 0/2/4 M (Kruskal-Wallis H = 7.20, p = 0.027); added
+  `scripts/regen_minfreq_sensitivity.py`.
 - **v2.0** — amplicon dataset restricted to the even-month timepoints (0/2/4/6 M, n = 12) analysed
   in the manuscript; `scripts/15_indval_heatmap.py` rewritten to be self-contained and to match
   manuscript Figure S10.

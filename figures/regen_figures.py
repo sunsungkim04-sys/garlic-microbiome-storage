@@ -262,7 +262,7 @@ def fig1_ITS_stacked():
 
 
 # ============================================================
-# Fig 2: Fungal succession framework — (A) family 7-month + (B) genus trajectory evenmonth
+# Fig 2: Fungal succession framework — (A) family + (B) genus trajectory, even-month
 # ============================================================
 def fig2_succession():
     print("Fig 2 — Fungal succession framework (even-month main frame)")
@@ -499,8 +499,9 @@ def fig4_quant():
         if sub is None or len(sub) == 0:
             ax.set_title(title + " (no data)")
             continue
-        if not title.startswith("A."):
-            sub = sub[sub["month_int"].isin([0, 2, 4, 6])]
+        # Every panel is on the even-month frame. Panel A (CFU) carries 0/2/4M only:
+        # month 6 was not assayed.
+        sub = sub[sub["month_int"].isin([0, 2, 4, 6])]
         x = sub["month_int"].values
         y = sub["mean"].values
         yerr = sub["sd"].values
@@ -537,17 +538,14 @@ def fig4_quant():
                 ax.plot(xline, np.polyval(coef, xline), linestyle="--", color=color, alpha=0.4, linewidth=1.5)
         ax.set_xlabel("Month")
         ax.set_title(title)
-        _kw = {"A.": "Kruskal-Wallis  H = 15.83, p = 0.007", "B.": "Kruskal-Wallis  H = 4.38, p = 0.22 (NS)", "C.": "Kruskal-Wallis  H = 10.38, p = 0.016"}
+        _kw = {"A.": "Kruskal-Wallis  H = 7.20, p = 0.027", "B.": "Kruskal-Wallis  H = 4.38, p = 0.22 (NS)", "C.": "Kruskal-Wallis  H = 10.38, p = 0.016"}
         _kwtxt = next((v for k, v in _kw.items() if title.startswith(k)), None)
         if _kwtxt:
             ax.text(0.04, 0.96, _kwtxt, transform=ax.transAxes, va="top", ha="left", fontsize=8.5,
                     bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="0.6", alpha=0.92))
-        if title.startswith("A."):
-            ax.set_xticks([0, 1, 2, 3, 4, 5])
-            ax.set_xticklabels(["0M", "1M", "2M", "3M", "4M", "5M"])
-        else:
-            ax.set_xticks([0, 2, 4, 6])
-            ax.set_xticklabels(["0M", "2M", "4M", "6M"])
+        ax.set_xlim(-0.45, 6.45)
+        ax.set_xticks([0, 2, 4, 6])
+        ax.set_xticklabels(["0M", "2M", "4M", "6M"])
         ax.grid(linestyle=":", alpha=0.4)
     plt.tight_layout()
     save_both(fig, "Fig4_quantification_0M_6M")
