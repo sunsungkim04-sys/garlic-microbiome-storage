@@ -28,7 +28,7 @@ data/            16S/ITS DADA2 feature tables, min-frequency=5 filtered tables, 
 supplementary/   consolidated Table S2/S3a/S3b/S6 TSVs (see supplementary/README.md)
 scripts/         analysis scripts (compositional sensitivity, stage Mantel, IndVal, depth sweep,
                  min-frequency sensitivity, ...)
-figures/         figure-regeneration scripts
+figures/         figure-regeneration scripts (output written to figures/output/)
 ```
 
 ## Reproduce
@@ -42,12 +42,22 @@ QIIME2 v2024.10 (16S SILVA 138.1 V4 99%, ITS UNITE v9 dynamic), then Python 3.11
 (`supplementary/TableS8_minfreq_sensitivity.tsv`) from this archive alone; at min-frequency = 5
 the 16S Bray-Curtis PERMANOVA reproduces the manuscript's F = 4.54.
 
+`python figures/regen_fig3_16S.py` and `python figures/regen_fig4_quantification.py`
+regenerate manuscript Figures 3 and 4 into `figures/output/`. Both compute every statistic
+printed on the figure from the data plotted — nothing is hardcoded. Figure 3 reports
+PERMANOVA F = 4.54, p = 0.001 with PERMDISP F = 12.40, p = 0.022; Figure 4 reports the CFU
+Kruskal-Wallis H = 7.20, p = 0.027. `python scripts/verify_fig4_stats.py` re-derives the
+Figure 4 rank statistics and compact-letter display independently.
+
 ## Versions
 - **v2.1** — min-frequency filtering is now applied to the 12 analysed samples, so every table in
   this archive is reproducible from the archive itself (16S min-freq=5: 587 ASVs; Table S6 updated).
   `data/quantification_summary.csv` restricted to the analysed timepoints; `figures/regen_figures.py`
   panel 4A corrected to 0/2/4 M (Kruskal-Wallis H = 7.20, p = 0.027); added
-  `scripts/regen_minfreq_sensitivity.py`.
+  `scripts/regen_minfreq_sensitivity.py`, `figures/regen_fig3_16S.py`,
+  `figures/regen_fig4_quantification.py` and `scripts/verify_fig4_stats.py`, so Figures 3 and 4
+  and Table S6 are all reproducible from this archive. The Figure 3 statistics box previously read
+  "PERMDISP NS"; PERMDISP is F = 12.40, p = 0.022 on the matrix the figure plots.
 - **v2.0** — amplicon dataset restricted to the even-month timepoints (0/2/4/6 M, n = 12) analysed
   in the manuscript; `scripts/15_indval_heatmap.py` rewritten to be self-contained and to match
   manuscript Figure S10.
