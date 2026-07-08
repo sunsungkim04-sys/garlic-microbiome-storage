@@ -96,8 +96,7 @@ def parse_sample_id(sid):
     if "_G" in sid and "_R" in sid:
         g = int(sid.split("_G")[1].split("_R")[0])
         r = int(sid.split("_R")[1])
-        full_map = {1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6}
-        return g, r, full_map.get(g)
+        return g, r, G2M.get(g)
     return None, None, None
 
 
@@ -423,7 +422,7 @@ def fig3_16S():
                 color=MONTH_COLORS_VIRIDIS[m], fontsize=14)
     ax.legend(loc="center left", bbox_to_anchor=(1.01, 0.5), frameon=False, fontsize=9)
     plt.tight_layout()
-    ax.text(0.02, 0.02, "PERMANOVA (Bray-Curtis)\nF = 4.54, p = 0.001, PERMDISP NS", transform=ax.transAxes, va="bottom", ha="left", fontsize=8.5, zorder=10,
+    ax.text(0.02, 0.02, "PERMANOVA (Bray-Curtis)\nF = 4.54, p = 0.001; PERMDISP F = 12.40, p = 0.022", transform=ax.transAxes, va="bottom", ha="left", fontsize=8.5, zorder=10,
             bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="0.6", alpha=0.92))
     save_both(fig, "Fig3A_16S_stacked_evenmonth")
 
@@ -460,7 +459,7 @@ def fig3_16S():
     ax.set_xlabel(f"PCo 1 ({ev_pct.iloc[0]:.1f}%)")
     ax.set_ylabel(f"PCo 2 ({ev_pct.iloc[1]:.1f}%)")
     ax.set_title(f"Bray-Curtis PCoA — 16S even-month (depth = 130, n = {len(coords)})")
-    ax.text(0.97, 0.03, f"PERMANOVA  F = 4.54, p = 0.001\nPERMDISP  NS\nunweighted UniFrac  F = 8.45, p = 0.001",
+    ax.text(0.97, 0.03, f"PERMANOVA  F = 4.54, p = 0.001\nPERMDISP  F = 12.40, p = 0.022 (unequal dispersion)\nunweighted UniFrac  F = 8.45, p = 0.001",
             transform=ax.transAxes, va="bottom", ha="right", fontsize=8.5,
             bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="0.6", alpha=0.9))
     ax.legend(title="Month", loc="best", frameon=True, framealpha=0.9, fontsize=10)
