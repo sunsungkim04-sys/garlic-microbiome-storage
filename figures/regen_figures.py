@@ -459,7 +459,7 @@ def fig3_16S():
     ax.set_xlabel(f"PCo 1 ({ev_pct.iloc[0]:.1f}%)")
     ax.set_ylabel(f"PCo 2 ({ev_pct.iloc[1]:.1f}%)")
     ax.set_title(f"Bray-Curtis PCoA — 16S even-month (depth = 130, n = {len(coords)})")
-    ax.text(0.97, 0.03, f"PERMANOVA  F = 4.54, p = 0.001\nPERMDISP  F = 12.40, p = 0.022 (unequal dispersion)\nunweighted UniFrac  F = 8.45, p = 0.001",
+    ax.text(0.97, 0.03, f"PERMANOVA  F = 4.54, p = 0.001\nPERMDISP  F = 12.40, p = 0.022 (unequal dispersion)\nunweighted UniFrac  F = 9.57, p = 0.001",
             transform=ax.transAxes, va="bottom", ha="right", fontsize=8.5,
             bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="0.6", alpha=0.9))
     ax.legend(title="Month", loc="best", frameon=True, framealpha=0.9, fontsize=10)

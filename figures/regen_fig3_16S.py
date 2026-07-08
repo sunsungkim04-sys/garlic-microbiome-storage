@@ -19,8 +19,9 @@ p = 0.022 — a consistent pair.
 The min-frequency filter is applied to the 12 analysed samples (587 ASVs), matching
 scripts/regen_minfreq_sensitivity.py.
 
-unweighted UniFrac (F = 8.45) needs the phylogeny, which is not part of this archive;
-it is carried in as a constant from the depth sweep and is flagged as such below.
+unweighted UniFrac (F = 9.57, R2 = 0.78, adjusted R2 = 0.70) needs the phylogeny, which is not
+part of this archive; it is carried in as a constant, recomputed against this same 587-ASV
+table and the same seed-42 rarefaction.
 
 Run:  python3 figures/regen_fig3_16S.py   (writes figures/output/)
 """
@@ -42,7 +43,7 @@ G2M = {1: 0, 3: 2, 5: 4, 7: 6}
 SEED, DEPTH = 42, 130
 
 # Carried in from garlic_16S_depth_sweep.py (needs the phylogeny; not computable here).
-UNIFRAC_TEXT = "unweighted UniFrac  F = 8.45, p = 0.001"
+UNIFRAC_TEXT = "unweighted UniFrac  F = 9.57, p = 0.001"
 
 MONTH_COLORS_VIRIDIS = {0: "#440154", 2: "#3b528b", 4: "#21918c", 6: "#fde725"}
 S16_COLORS = {
